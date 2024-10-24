@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\PeticionController;
+use App\Http\Controllers\ServicioController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -24,6 +24,17 @@ Route::middleware('auth')->group(function () {
     Route::delete('/servicios/{servicio}', [ServicioController::class, 'destroy'])->name('servicios.destroy');
     Route::put('/servicios/{servicio}', [ServicioController::class, 'update'])->name('servicios.update');
     Route::get('/servicios/{servicio}/edit', [ServicioController::class, 'edit'])->name('servicios.edit');
+
+    //------------ // SERVICIO JARDIN // ---------->
+    Route::get('servicios/jardin', [ServicioController::class, 'indexJardin'])->name('servicios.jardin.index');
+
+    //------------ // SERVICIO SPA // ---------->
+    Route::get('servicios/spa', [ServicioController::class, 'indexSpa'])->name('servicios.spa.index');
+
+    //------------ // SERVICIO PASEO // ---------->
+    Route::get('servicios/paseo', [ServicioController::class, 'indexPaseo'])->name('servicios.paseo.index');
+
+
 
 
 

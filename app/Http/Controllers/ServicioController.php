@@ -1,18 +1,27 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Peticion;
 
 use Illuminate\Http\Request;
 
-class PeticionController extends Controller
+class ServicioController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function indexJardin()
     {
-        //
+        return view('servicios.jardin.index');
+    }
+
+    public function indexSpa()
+    {
+        return view('servicios.spa.index');
+    }
+
+    public function indexPaseo()
+    {
+        return view('servicios.paseo.index');
     }
 
     /**

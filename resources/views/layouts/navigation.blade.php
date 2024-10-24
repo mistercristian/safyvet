@@ -17,6 +17,12 @@
                     </x-nav-link>
                 </div>
 
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('politicas.index')" :active="request()->routeIs('politicas.index')">
+                        {{ __('Politicas') }}
+                    </x-nav-link>
+                </div>
+
                 <!-- PRODUCTOS -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-9 sm:flex  items-center">
         <x-dropdown align="right" width="48">

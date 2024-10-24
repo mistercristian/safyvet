@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PeticionController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PoliticaControlador;
 
 Route::get('/', function () {
     return view('welcome');
@@ -24,6 +25,11 @@ Route::middleware('auth')->group(function () {
     Route::delete('/servicios/{servicio}', [ServicioController::class, 'destroy'])->name('servicios.destroy');
     Route::put('/servicios/{servicio}', [ServicioController::class, 'update'])->name('servicios.update');
     Route::get('/servicios/{servicio}/edit', [ServicioController::class, 'edit'])->name('servicios.edit');
+
+    
+    //------------ // POLITICAS // ---------->
+
+    Route::get('/politicas',[PoliticaControlador::class, 'index'])->name('politicas.index');
 
 
 

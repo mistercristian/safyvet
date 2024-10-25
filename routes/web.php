@@ -4,6 +4,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PeticionController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PoliticaControlador;
+use App\Http\Controllers\TerminoControlador;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -30,6 +32,10 @@ Route::middleware('auth')->group(function () {
     //------------ // POLITICAS // ---------->
 
     Route::get('/politicas',[PoliticaControlador::class, 'index'])->name('politicas.index');
+
+     //------------ // Terminos // ---------->
+
+     Route::get('/terminos',[TerminoControlador::class, 'index'])->name('terminos.index');
 
 
 

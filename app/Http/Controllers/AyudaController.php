@@ -3,26 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Ayudas;
 
-class ServicioController extends Controller
+class AyudaController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function indexJardin()
+    public function index()
     {
-        return view('peticion.index');
-        return view('servicios.jardin.index');
-    }
-
-    public function indexSpa()
-    {
-        return view('servicios.spa.index');
-    }
-
-    public function indexPaseo()
-    {
-        return view('servicios.paseo.index');
+        $ayudas= Ayudas::all();
+        return view('ayuda.index',['ayudas'=>$ayudas]);
     }
 
     /**

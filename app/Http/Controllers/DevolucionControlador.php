@@ -1,28 +1,18 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Devoluciones;
 use Illuminate\Http\Request;
 
-class ServicioController extends Controller
+class DevolucionControlador extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function indexJardin()
+    public function index()
     {
-        return view('peticion.index');
-        return view('servicios.jardin.index');
-    }
-
-    public function indexSpa()
-    {
-        return view('servicios.spa.index');
-    }
-
-    public function indexPaseo()
-    {
-        return view('servicios.paseo.index');
+        $devoluciones=Devoluciones::all();
+        return view('devolucion.index',['devoluciones'=>$devoluciones]);
     }
 
     /**
@@ -38,7 +28,17 @@ class ServicioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $devoluciones=new Devoluciones();
+        $devoluciones->nombre= $request->nombre;
+        $devoluciones->descripcion= $request->descripcion;
+        $devoluciones->foto= $request->foto;
+
+        $devoluciones->save();
+
+        return redirect()->route('devoluciones.index');
+
+
+
     }
 
     /**

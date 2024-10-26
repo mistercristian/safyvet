@@ -4,25 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ServicioController extends Controller
+class TerminoControlador extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function indexJardin()
+    public function index()
     {
-        return view('peticion.index');
-        return view('servicios.jardin.index');
-    }
-
-    public function indexSpa()
-    {
-        return view('servicios.spa.index');
-    }
-
-    public function indexPaseo()
-    {
-        return view('servicios.paseo.index');
+        return view('termino.index');
     }
 
     /**

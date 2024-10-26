@@ -3,26 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Contactos;
 
-class ServicioController extends Controller
+class ContactenosController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function indexJardin()
+    public function index()
     {
-        return view('peticion.index');
-        return view('servicios.jardin.index');
-    }
-
-    public function indexSpa()
-    {
-        return view('servicios.spa.index');
-    }
-
-    public function indexPaseo()
-    {
-        return view('servicios.paseo.index');
+        $contactenos= Contactos::all();
+        return view('contactenos.index',['contactenos'=>$contactenos]);
     }
 
     /**
@@ -38,7 +29,13 @@ class ServicioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $contacto = new Contactos();
+        $contacto->nombre = $request->name;
+        $contacto->email = $request->email;
+        $contacto->comentario = $request->message;
+        $contacto->save();
+
+        return redirect()->route('contactenos.index');
     }
 
     /**

@@ -1,28 +1,18 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Pqrs;
 use Illuminate\Http\Request;
 
-class ServicioController extends Controller
+class PeticionControlador extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function indexJardin()
+    public function index()
     {
-        return view('peticion.index');
-        return view('servicios.jardin.index');
-    }
-
-    public function indexSpa()
-    {
-        return view('servicios.spa.index');
-    }
-
-    public function indexPaseo()
-    {
-        return view('servicios.paseo.index');
+        $pqrs=Pqrs::all();
+        return view('peticion.index',['pqrs'=>$pqrs]);
     }
 
     /**
@@ -38,7 +28,15 @@ class ServicioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $pqrs=new Pqrs();
+        $pqrs->nombre=$request->nombre;
+        $pqrs->email=$request->email;
+        $pqrs->pqrs=$request->pqrs;
+        $pqrs->asunto=$request->asunto;
+        $pqrs->comentario=$request->comentario;
+        $pqrs->save();
+
+        return redirect()->route('peticiones.index');
     }
 
     /**

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServicioController;
+use App\Http\Controllers\ProductoController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -17,14 +18,6 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    //------------ // PQRS // ---------->
-    Route::get('/peticiones',[PeticionController::class, 'index'])->name('peticiones.index');
-    Route::post('/servicios',[ServicioController::class, 'store'])->name('servicios.store');
-    Route::get('/servicios/create', [ServicioController::class, 'create'])->name('servicios.create');
-    Route::delete('/servicios/{servicio}', [ServicioController::class, 'destroy'])->name('servicios.destroy');
-    Route::put('/servicios/{servicio}', [ServicioController::class, 'update'])->name('servicios.update');
-    Route::get('/servicios/{servicio}/edit', [ServicioController::class, 'edit'])->name('servicios.edit');
-
     //------------ // SERVICIO JARDIN // ---------->
     Route::get('servicios/jardin', [ServicioController::class, 'indexJardin'])->name('servicios.jardin.index');
 
@@ -33,6 +26,17 @@ Route::middleware('auth')->group(function () {
 
     //------------ // SERVICIO PASEO // ---------->
     Route::get('servicios/paseo', [ServicioController::class, 'indexPaseo'])->name('servicios.paseo.index');
+
+    //------------ // PRODUCTO ALIMENTOS // ---------->
+    Route::get('productos/alimento', [ProductoController::class, 'indexAlimento'])->name('productos.alimento.index');
+
+    //------------ // PRODUCTO ACCESORIOS // ---------->
+    Route::get('productos/accesorio', [ProductoController::class, 'indexAccesorio'])->name('productos.accesorio.index');
+
+    //------------ // PRODUCTO MEDICAMENTOS // ---------->
+    Route::get('productos/medicamento', [ProductoController::class, 'indexMedicamento'])->name('productos.medicamento.index');
+
+
 
 
 

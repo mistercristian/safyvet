@@ -21,7 +21,7 @@
                 <div class="hidden space-x-8 sm:-my-px sm:ms-9 sm:flex  items-center">
         <x-dropdown align="right" width="48">
         <x-slot name="trigger">
-            <button class="inline-flex  px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
+            <button class="inline-flex  px-3 py-2  text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
                 <div>{{ __('Productos') }}</div>
                 <div class="ms-1">
                     <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -33,13 +33,13 @@
 
         <x-slot name="content">
             <!-- Submenú de productos -->
-            <x-dropdown-link href="#">
+            <x-dropdown-link href="{{ route('productos.alimento.index')}}">
                 {{ __('Alimentos') }}
             </x-dropdown-link>
-            <x-dropdown-link href="#">
+            <x-dropdown-link href="{{ route('productos.medicamento.index')}}">
                 {{ __('Medicamentos') }}
             </x-dropdown-link>
-            <x-dropdown-link href="#">
+            <x-dropdown-link href="{{ route('productos.accesorio.index')}}">
                 {{ __('Accesorios') }}
             </x-dropdown-link>
         </x-slot>
@@ -51,7 +51,7 @@
 <div class="hidden space-x-8 sm:-my-px sm:ms-9 sm:flex  items-center">
     <x-dropdown align="right" width="48">
     <x-slot name="trigger">
-        <button class="inline-flex  px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
+        <button class="inline-flex  px-3 py-2  text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
             <div>{{ __('Servicios') }}</div>
             <div class="ms-1">
                 <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -91,7 +91,7 @@
 
 <!--------- PQRS---------->
 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-    <x-nav-link :href="route('peticiones.index')" :active="request()->routeIs('peticiones.index')">
+    <x-nav-link href="#">
         {{ __('PQRS') }}
     </x-nav-link>
 </div>

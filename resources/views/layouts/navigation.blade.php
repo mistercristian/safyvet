@@ -17,17 +17,6 @@
                     </x-nav-link>
                 </div>
 
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('politicas.index')" :active="request()->routeIs('politicas.index')">
-                        {{ __('Politicas') }}
-                    </x-nav-link>
-                </div>
-
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('terminos.index')" :active="request()->routeIs('terminos.index')">
-                        {{ __('Terminos') }}
-                    </x-nav-link>
-                </div>
 
                 <!-- PRODUCTOS -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-9 sm:flex  items-center">
@@ -88,7 +77,7 @@
 </x-dropdown>
 </div>
 <!--------- QUIENES SOMOS---------->
-<div class="hidden space-x-8 sm:-my-px sm:ms-8 sm:flex">
+<div class="hidden space-x-8 sm:-my-px sm:ms-9 sm:flex  items-center">
     <x-nav-link :href="route('quienes.index')" :active="request()->routeIs('quienes.index')">
         {{ __('Quienes Somos') }}
     </x-nav-link>
@@ -103,8 +92,29 @@
 
 <!--------- PQRS---------->
 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-    <x-nav-link href="#">
+    <x-nav-link :href="route('peticiones.index')" :active="request()->routeIs('peticiones.index')">
         {{ __('PQRS') }}
+    </x-nav-link>
+</div>
+
+
+
+<!--------- DEVOLUCIONES---------->
+<div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+    <x-nav-link :href="route('devoluciones.index')" :active="request()->routeIs('devoluciones.index')">
+        {{ __('Devoluciones') }}
+    </x-nav-link>
+</div>
+
+<div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+    <x-nav-link :href="route('politicas.index')" :active="request()->routeIs('politicas.index')">
+        {{ __('Politicas') }}
+    </x-nav-link>
+</div>
+
+<div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+    <x-nav-link :href="route('terminos.index')" :active="request()->routeIs('terminos.index')">
+        {{ __('Terminos') }}
     </x-nav-link>
 </div>
 
@@ -112,13 +122,6 @@
 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
     <x-nav-link :href="route('ayudas.index')" :active="request()->routeIs('ayudas.index')">
         {{ __('Ayuda') }}
-    </x-nav-link>
-</div>
-
-<!--------- DEVOLUCIONES---------->
-<div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-    <x-nav-link :href="route('devoluciones.index')" :active="request()->routeIs('devoluciones.index')">
-        {{ __('Devoluciones') }}
     </x-nav-link>
 </div>
 

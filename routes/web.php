@@ -30,13 +30,11 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     //------------ // PQRS // ---------->
-    Route::get('/peticiones',[PeticionController::class, 'index'])->name('peticiones.index');
-    Route::post('/servicios',[ServicioController::class, 'store'])->name('servicios.store');
-    Route::get('/servicios/create', [ServicioController::class, 'create'])->name('servicios.create');
-    Route::delete('/servicios/{servicio}', [ServicioController::class, 'destroy'])->name('servicios.destroy');
-    Route::put('/servicios/{servicio}', [ServicioController::class, 'update'])->name('servicios.update');
-    Route::get('/servicios/{servicio}/edit', [ServicioController::class, 'edit'])->name('servicios.edit');
+    Route::get('/peticiones',[PeticionControlador::class, 'index'])->name('peticiones.index');
+    Route::post('/peticiones',[PeticionControlador::class, 'store'])->name('peticiones.store');
 
+    
+    //------------ // POLITICAS // ---------->
     //------------ // SERVICIO JARDIN // ---------->
     Route::get('servicios/jardin', [ServicioController::class, 'indexJardin'])->name('servicios.jardin.index');
 
@@ -46,10 +44,35 @@ Route::middleware('auth')->group(function () {
     //------------ // SERVICIO PASEO // ---------->
     Route::get('servicios/paseo', [ServicioController::class, 'indexPaseo'])->name('servicios.paseo.index');
 
+    //------------ // PRODUCTO ALIMENTOS // ---------->
+    Route::get('productos/alimento', [ProductoController::class, 'indexAlimento'])->name('productos.alimento.index');
+
+    //------------ // PRODUCTO ACCESORIOS // ---------->
+    Route::get('productos/accesorio', [ProductoController::class, 'indexAccesorio'])->name('productos.accesorio.index');
+
+    //------------ // PRODUCTO MEDICAMENTOS // ---------->
+    Route::get('productos/medicamento', [ProductoController::class, 'indexMedicamento'])->name('productos.medicamento.index');
 
 
 
+    Route::get('/contactos',[ContactenosController::class, 'index'])->name('contactenos.index');
+    Route::post('/contactos',[ContactenosController::class, 'store'])->name('contactenos.store');
+    
+    Route::get('/quienes',[QuienesController::class, 'index'])->name('quienes.index');
+    
+    Route::get('/ayudas',[AyudaController::class, 'index'])->name('ayudas.index');
 
+
+    Route::get('/politicas',[PoliticaControlador::class, 'index'])->name('politicas.index');
+
+     //------------ // Terminos // ---------->
+
+     Route::get('/terminos',[TerminoControlador::class, 'index'])->name('terminos.index');
+
+    //------------ // Terminos // ---------->
+
+    Route::get('/devoluciones',[DevolucionControlador::class, 'index'])->name('devoluciones.index');
+    Route::post('/devoluciones',[DevolucionControlador::class, 'store'])->name('devoluciones.store');
 });
 
 require __DIR__.'/auth.php';

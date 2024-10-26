@@ -17,7 +17,7 @@
     <div class="container">
 
       <div class="container d-flex justify-content-center">
-        <img src="{{ asset('img/safivet2.png') }}" alt="safy">
+        <img src="{{ asset('img/safivet.png') }}" alt="safy">
     </div>
       <br>
       <p class="text-center" style="font-size: 24px;"><strong> Crear PQR</strong></p>

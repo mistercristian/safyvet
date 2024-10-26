@@ -5,6 +5,7 @@ use App\Http\Controllers\PeticionController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PoliticaControlador;
 use App\Http\Controllers\TerminoControlador;
+use App\Http\Controllers\DevolucionControlador;
 
 
 Route::get('/', function () {
@@ -37,8 +38,10 @@ Route::middleware('auth')->group(function () {
 
      Route::get('/terminos',[TerminoControlador::class, 'index'])->name('terminos.index');
 
+    //------------ // Terminos // ---------->
 
-
+    Route::get('/devoluciones',[DevolucionControlador::class, 'index'])->name('devoluciones.index');
+    Route::post('/devoluciones',[DevolucionControlador::class, 'store'])->name('devoluciones.store');
 });
 
 require __DIR__.'/auth.php';

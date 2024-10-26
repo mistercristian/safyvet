@@ -42,7 +42,7 @@
                                 }
                                 .Buscar-input:focus {
                                     border-color: #F19501; /* Mantiene el color del borde al hacer foco en el input */
-                                    box-shadow: 5px 0 5px rgba(245, 113, 83, 0.925); 
+                                    box-shadow: 5px 0 5px #F19501; 
                                 }
 
                                 /*-----Acordion CCS */
@@ -66,6 +66,7 @@
                                 /* Cambiar el color del borde del acordeón */
                                 .accordion-item {
                                     border-color: #F19501; /* Color del borde */
+                                   
                                 }
 
                         
@@ -74,7 +75,7 @@
                         </head>
                         <body>
                             <div class="container d-flex justify-content-center">
-                                <img src="{{ asset('img/safivet.png') }}" alt="safy">
+                                <img src="{{ asset('img/safivet2.png') }}" alt="safy">
                             </div>
                             <br>
                             <p class="Parrafo_info">Información importante sobre nuestros Terminos Y condiciones</p>
@@ -92,103 +93,104 @@
 
                             <div class="accordion accordion-flush" id="accordionFlushExample">
                                 <div class="accordion-item">
-                                    <h2 class="accordion-header" id="flush-headingOne">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                                            • Aceptación de los Términos
-                                        </button>
-                                    </h2>
-                                    <div id="flush-collapseOne" class="accordion-collapse collapse " aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body"><p>Al acceder y utilizar los servicios de SAFYVET, usted acepta cumplir y estar sujeto a estos Términos y Condiciones. Si no está de acuerdo con alguna parte de estos términos, no podrá utilizar nuestros servicios. </p> </div>
+                                  <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                        • Aceptación de los Términos
+                                    </button>
+                                  </h2>
+                                  <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body"><p>Al acceder y utilizar los servicios de SAFYVET, usted acepta cumplir y estar sujeto a estos Términos y Condiciones. Si no está de acuerdo con alguna parte de estos términos, no podrá utilizar nuestros servicios. </p> </div>
+                                  </div>
                                 </div>
                                 <div class="accordion-item">
-                                    <h2 class="accordion-header" id="flush-headingTwo">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                                            •Descripción de Servicios
-                                        </button>
-                                    </h2>
-                                    <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body"><p>SAFYVET ofrece una amplia gama de servicios veterinarios, incluyendo pero no limitado a:</p>
-                                            <li>Consultas y exámenes de rutina</li>
-                                            <li>Vacunaciones</li>
-                                            <li>Cirugías menores y mayores</li>
-                                            <li>Tratamientos dentales</li>
-                                            <li>Diagnóstico por imágenes (rayos X, ultrasonido)</li>
-                                            <li>Servicios de laboratorio</li>
-                                            <li>Cuidados de emergencia</li>
-                                        
-                                        
-                                        </div>
+                                  <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                        •Descripción de Servicios
+                                    </button>
+                                  </h2>
+                                  <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body"><p>SAFYVET ofrece una amplia gama de servicios veterinarios, incluyendo pero no limitado a:</p>
+                                        <li>Consultas y exámenes de rutina</li>
+                                        <li>Vacunaciones</li>
+                                        <li>Cirugías menores y mayores</li>
+                                        <li>Tratamientos dentales</li>
+                                        <li>Diagnóstico por imágenes (rayos X, ultrasonido)</li>
+                                        <li>Servicios de laboratorio</li>
+                                        <li>Cuidados de emergencia</li>
+
                                     </div>
+                                  </div>
                                 </div>
                                 <div class="accordion-item">
-                                    <h2 class="accordion-header" id="flush-headingThree">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                                            • Responsabilidades del Cliente
-                                        </button>
-                                    </h2>
-                                    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body">
-                                            <p>Los propietarios son responsables de:</p>
-                                            <li>Proporcionar información precisa sobre la salud y el historial médico de su mascota</li>
+                                  <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                        • Responsabilidades del Cliente
+                                    </button>
+                                  </h2>
+                                  <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body"><p>Los propietarios son responsables de:</p>
+                                        <li>Proporcionar información precisa sobre la salud y el historial médico de su mascota</li>
                                             <li>Seguir las instrucciones de tratamiento y cuidado proporcionadas por nuestros veterinarios</li>
                                             <li>Mantener las citas programadas o cancelar con la debida anticipación</li>
                                             <li>Mantener a su mascota bajo control en nuestras instalaciones</li>
                                             <li>Pagar por los servicios prestados en el momento de la visita</li>
 
-                                        
                                     </div>
+                                  </div>
+
+                                  
                                 </div>
 
                                 <div class="accordion-item">
-                                    <h2 class="accordion-header" id="flush-headingfour">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsefour" aria-expanded="false" aria-controls="flush-collapsefour">
-                                            • Limitación de Responsabilidad
-                                        </button>
+                                    <h2 class="accordion-header">
+                                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseLimi" aria-expanded="false" aria-controls="flush-collapseLimi">
+                                        • Limitación de Responsabilidad
+                                      </button>
                                     </h2>
-                                    <div id="flush-collapsefour" class="accordion-collapse collapse" aria-labelledby="flush-headingfour" data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body"><p> SAFYVET y sus empleados no serán responsables por daños indirectos, incidentales o consecuentes que surjan del
-                                            uso de nuestros servicios. Nuestra responsabilidad se limita al costo de los servicios prestados. En caso de
-                                            negligencia médica, la responsabilidad se determinará de acuerdo con las leyes aplicables.</p>
-                                        </div>
+                                    <div id="flush-collapseLimi" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                      <div class="accordion-body"><p> SAFYVET y sus empleados no serán responsables por daños indirectos, incidentales o consecuentes que surjan del
+                                        uso de nuestros servicios. Nuestra responsabilidad se limita al costo de los servicios prestados. En caso de
+                                        negligencia médica, la responsabilidad se determinará de acuerdo con las leyes aplicables.</p>
+                                      </div>
                                     </div>
-                                </div>
+                              </div>
 
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="flush-headingFive">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
-                                            • Modificaciones a los Términos
-                                        </button>
+                              <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseModi" aria-expanded="false" aria-controls="flush-collapseModi">
+                                        • Modificaciones a los Términos
+                                      </button>
                                     </h2>
-                                    <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body"><p> SAFYVET se reserva el derecho de modificar estos términos en cualquier momento. Los cambios entrarán en vigor
-                                            inmediatamente después de su publicación en nuestro sitio web. Es su responsabilidad revisar periódicamente
-                                            estos términos para mantenerse informado de cualquier actualización.
-                                          </p></p>
-                                        </div>
-                                    </div>
-                                </div>
+                                    <div id="flush-collapseModi" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                      <div class="accordion-body"><p> SAFYVET se reserva el derecho de modificar estos términos en cualquier momento. Los cambios entrarán en vigor
+                                        inmediatamente después de su publicación en nuestro sitio web. Es su responsabilidad revisar periódicamente
+                                        estos términos para mantenerse informado de cualquier actualización.
+                                      </p>
 
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="flush-headingSix">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
-                                            • Ley Aplicable
-                                        </button>
-                                    </h2>
-                                    <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body"><p> Estos Términos y Condiciones se regirán e interpretarán de acuerdo con las leyes de [insertar jurisdicción],
-                                            sin tener en cuenta sus disposiciones sobre conflictos de leyes.</p>
-                                        </div>
+                                      </div>
                                     </div>
-                                </div>
+                              </div>
 
+
+                              <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseApli" aria-expanded="false" aria-controls="flush-collapseApli">
+                                    • Ley Aplicable
+                                  </button>
+                                </h2>
+                                <div id="flush-collapseApli" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                  <div class="accordion-body"><p> Estos Términos y Condiciones se regirán e interpretarán de acuerdo con las leyes de [insertar jurisdicción],
+                                    sin tener en cuenta sus disposiciones sobre conflictos de leyes.
+                                  </p>
+
+                                  </div>
+                                </div>
+                          </div>
+
+                        </div>
                                
-                                
-                            </div>
-                                </div>
                            
-                        
-
-                            <script>
+                                <script>
                                 function filterAccordion() {
                                     const input = document.getElementById('searchInput');
                                     const filter = input.value.toLowerCase();
@@ -203,7 +205,8 @@
                                         }
                                     });
                                 }
-                            </script>
+                                </script>
+
 
                             <!-- Option 1: Bootstrap Bundle with Popper -->
                             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

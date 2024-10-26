@@ -1,18 +1,18 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Peticion;
-
+use App\Models\Devoluciones;
 use Illuminate\Http\Request;
 
-class PeticionController extends Controller
+class DevolucionControlador extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('peticion.index');
+        $devoluciones=Devoluciones::all();
+        return view('devolucion.index',['devoluciones'=>$devoluciones]);
     }
 
     /**
@@ -28,7 +28,17 @@ class PeticionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $devoluciones=new Devoluciones();
+        $devoluciones->nombre= $request->nombre;
+        $devoluciones->descripcion= $request->descripcion;
+        $devoluciones->foto= $request->foto;
+
+        $devoluciones->save();
+
+        return redirect()->route('devoluciones.index');
+
+
+
     }
 
     /**

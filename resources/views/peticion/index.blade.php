@@ -13,7 +13,7 @@
             
             <div class="mb-3">
               <label for="name" class="form-label">Nombre y Apellido</label>
-              <input type="date" id="nombre" name="nombre" value="" required/>
+              <input type="text" class="form-control" id="nombre" name="name" aria-describedby='nameHelp' placeholder="Ingrese Nombre" required>
             </div>
 
             <div class="mb-3">

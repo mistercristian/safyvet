@@ -1,4 +1,5 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 <x-app-layout>
     <x-slot name="header">
@@ -30,7 +31,7 @@
                     </div>
                     <br>
                     <div class="d-flex justify-content-center">
-                        <a href="#bano-terapeutico" class="btn btn-warning">Ver Más</a>
+                        <a href="#bano-terapeutico" class="btn btn-info">Ver Más</a>
                     </div>
                 </div>
             </div>
@@ -49,7 +50,7 @@
                     </div>
                     <br>
                     <div class="d-flex justify-content-center">
-                        <a href="#masajes" class="btn btn-warning">Ver Más</a>
+                        <a href="#masajes" class="btn btn-info">Ver Más</a>
                     </div>
                 </div>
             </div>
@@ -68,7 +69,7 @@
                     </div>
                     <br>
                     <div class="d-flex justify-content-center">
-                        <a href="#corte-pelo" class="btn btn-warning">Ver Más</a>
+                        <a href="#corte-pelo" class="btn btn-info">Ver Más</a>
                     </div>
                 </div>
             </div>
@@ -77,6 +78,8 @@
 </div>
 
 <!-- SECCION 2 - DESCRIPCION -->
+
+<hr class="my-5" style="border-top: 7px solid #e0a119;">
 
 <div class="container mt-5">
     <h1 class="text-center mb-4 custom-tittle">Descripción de Servicios de Spa</h1> 
@@ -93,7 +96,7 @@
             <p><strong>Incluye:</strong> Baño con productos especiales, secado y cepillado.</p>
             <p><strong>Precio:</strong> $60.000</p>
             <br>
-            <button class="btn btn-warning" onclick="alert('Servicio obtenido: Baño Terapéutico')">Obtener</button>
+            <button class="btn btn-warning" onclick="showModal('Baño Terapéutico')">Obtener</button>
         </div>
     </div>
 
@@ -109,7 +112,7 @@
             <p><strong>Incluye:</strong> Masaje relajante, aromaterapia y tiempo de descanso.</p>
             <p><strong>Precio:</strong> $80.000</p>
             <br>
-            <button class="btn btn-warning" onclick="alert('Servicio obtenido: Masajes')">Obtener</button>
+            <button class="btn btn-warning" onclick="showModal('Masajes')">Obtener</button>
         </div>
     </div>
 
@@ -125,11 +128,94 @@
             <p><strong>Incluye:</strong> Corte de pelo, cepillado y limpieza de oídos.</p>
             <p><strong>Precio:</strong> $70.000</p>
             <br>
-            <button class="btn btn-warning" onclick="alert('Servicio obtenido: Corte de Pelo')">Obtener</button>
+            <button class="btn btn-warning" onclick="showModal('Corte de Pelo')">Obtener</button>
         </div>
     </div>
 </div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<hr class="my-5" style="border-top: 7px solid #e0a119;">
+
+<div class="container mt-5">
+    <h2 class="text-center custom-tittle">Información de la Empresa</h2>
+    <div class="row mt-4">
+        
+        <div class="col-md-4 mb-4">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h5><i class="fas fa-envelope"></i> Contacto</h5>
+                </div>
+                <div class="card-body">
+                    <p><i class="fas fa-envelope"></i> Email: <a href="mailto:info@safyvet.com">info@safyvet.com</a></p>
+                    <p><i class="fas fa-phone"></i> Teléfono: +57 123 456 7890</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h5><i class="fas fa-map-marker-alt"></i> Dirección</h5>
+                </div>
+                <div class="card-body">
+                    <p><i class="fas fa-map-marker-alt"></i> Calle 123 #45-67</p>
+                    <p>Ciudad, Colombia</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h5><i class="fas fa-share-alt"></i> Síguenos</h5>
+                </div>
+                <div class="card-body">
+                    <p>
+                        <a href="#" class="btn btn-primary btn-sm"><i class="fab fa-facebook-f"></i> Facebook</a>
+                        <a href="#" class="btn btn-danger btn-sm"><i class="fab fa-instagram"></i> Instagram</a>
+                        <a href="#" class="btn btn-info btn-sm"><i class="fab fa-twitter"></i> Twitter</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de confirmación -->
+<div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmationModalLabel">Servicio Obtenido</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body text-center">
+                <!-- Imagen de Check -->
+                <div class="d-flex justify-content-center"> 
+                    <img src="{{ asset('img/check-icon.png') }}" alt="Check" height="150px" width="150px" class="check-icon">
+                </div>
+                
+                <!-- Mensaje de confirmación -->
+                <p id="modalServiceName"></p>
+                <p>Tu servicio ha sido obtenido correctamente. Nos pondremos en contacto contigo para confirmar los detalles.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap y JS para el Modal -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<!-- Script personalizado para mostrar el nombre del servicio en el Modal -->
+<script>
+    function showModal(serviceName) {
+        document.getElementById('modalServiceName').textContent = `Has obtenido el servicio: ${serviceName}`;
+        var confirmationModal = new bootstrap.Modal(document.getElementById('confirmationModal'));
+        confirmationModal.show();
+    }
+</script>
+
+   
 </x-app-layout>

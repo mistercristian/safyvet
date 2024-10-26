@@ -51,7 +51,7 @@
                 </a>
             @endif
 
-            <x-primary-button class=" btn-warning">
+            <x-primary-button class="ms-3 btn-warning">
                 {{ __('Log in') }}
             </x-primary-button>
         </div>

@@ -1,6 +1,10 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PeticionController;
+use App\Http\Controllers\ContactenosController;
+use App\Http\Controllers\QuienesController;
+use App\Http\Controllers\AyudaController;
 use App\Http\Controllers\ServicioController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PoliticaControlador;
@@ -12,6 +16,8 @@ use App\Http\Controllers\PeticionControlador;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -37,7 +43,12 @@ Route::middleware('auth')->group(function () {
     //------------ // SERVICIO PASEO // ---------->
     Route::get('servicios/paseo', [ServicioController::class, 'indexPaseo'])->name('servicios.paseo.index');
 
-
+    Route::get('/contactos',[ContactenosController::class, 'index'])->name('contactenos.index');
+    Route::post('/contactos',[ContactenosController::class, 'store'])->name('contactenos.store');
+    
+    Route::get('/quienes',[QuienesController::class, 'index'])->name('quienes.index');
+    
+    Route::get('/ayudas',[AyudaController::class, 'index'])->name('ayudas.index');
 
 
     Route::get('/politicas',[PoliticaControlador::class, 'index'])->name('politicas.index');

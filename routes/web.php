@@ -1,11 +1,12 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\PeticionController;
+use App\Http\Controllers\ServicioController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PoliticaControlador;
 use App\Http\Controllers\TerminoControlador;
 use App\Http\Controllers\DevolucionControlador;
+use App\Http\Controllers\PeticionControlador;
 
 
 Route::get('/', function () {
@@ -22,15 +23,22 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     //------------ // PQRS // ---------->
-    Route::get('/peticiones',[PeticionController::class, 'index'])->name('peticiones.index');
-    Route::post('/servicios',[ServicioController::class, 'store'])->name('servicios.store');
-    Route::get('/servicios/create', [ServicioController::class, 'create'])->name('servicios.create');
-    Route::delete('/servicios/{servicio}', [ServicioController::class, 'destroy'])->name('servicios.destroy');
-    Route::put('/servicios/{servicio}', [ServicioController::class, 'update'])->name('servicios.update');
-    Route::get('/servicios/{servicio}/edit', [ServicioController::class, 'edit'])->name('servicios.edit');
+    Route::get('/peticiones',[PeticionControlador::class, 'index'])->name('peticiones.index');
+    Route::post('/peticiones',[PeticionControlador::class, 'store'])->name('peticiones.store');
 
     
     //------------ // POLITICAS // ---------->
+    //------------ // SERVICIO JARDIN // ---------->
+    Route::get('servicios/jardin', [ServicioController::class, 'indexJardin'])->name('servicios.jardin.index');
+
+    //------------ // SERVICIO SPA // ---------->
+    Route::get('servicios/spa', [ServicioController::class, 'indexSpa'])->name('servicios.spa.index');
+
+    //------------ // SERVICIO PASEO // ---------->
+    Route::get('servicios/paseo', [ServicioController::class, 'indexPaseo'])->name('servicios.paseo.index');
+
+
+
 
     Route::get('/politicas',[PoliticaControlador::class, 'index'])->name('politicas.index');
 

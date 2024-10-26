@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-x5 text-gray-800 leading-tight">
@@ -188,6 +189,58 @@
                           </div>
 
                         </div>
+
+                        <hr class="my-5" style="border-top: 7px solid #e0a119;">
+
+
+<div class="container mt-5">
+    <h2 class="text-center custom-tittle">Información de la Empresa</h2>
+    <div class="row mt-4">
+        
+        <div class="col-md-4 mb-4">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h5><i class="fas fa-envelope"></i> Contacto</h5>
+                </div>
+                <div class="card-body">
+                    <p><i class="fas fa-envelope"></i> Email: <a href="mailto:info@safyvet.com">info@safyvet.com</a></p>
+                    <p><i class="fas fa-phone"></i> Teléfono: +57 123 456 7890</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h5><i class="fas fa-map-marker-alt"></i> Dirección</h5>
+                </div>
+                <div class="card-body">
+                    <p><i class="fas fa-map-marker-alt"></i> Calle 123 #45-67</p>
+                    <p>Ciudad, Colombia</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h5><i class="fas fa-share-alt"></i> Síguenos</h5>
+                </div>
+                <div class="card-body">
+                    <p>
+                        <a href="#" class="btn btn-primary btn-sm"><i class="fab fa-facebook-f"></i> Facebook</a>
+                        <a href="#" class="btn btn-danger btn-sm"><i class="fab fa-instagram"></i> Instagram</a>
+                        <a href="#" class="btn btn-info btn-sm"><i class="fab fa-twitter"></i> Twitter</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>  
+
+<hr class="my-5" style="border-top: 7px solid #e0a119;">
                                
                            
                                 <script>

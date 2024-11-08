@@ -2,7 +2,33 @@
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
+    @if (Route::has('login'))
+    <nav class="-mx-3 flex flex-1 justify-end">
+        @auth
+            <a
+                href="{{ url('/dashboard') }}"
+                class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#000000] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
+            >
+                Dashboard
+            </a>
+        @else
+           
+
+            @if (Route::has('register'))
+                <a
+                    href="{{ route('register') }}"
+                   
+                >
+                    Register
+                </a>
+            @endif
+        @endauth
+    </nav>
+@endif
+
+   
     <form method="POST" action="{{ route('login') }}">
+        
         @csrf
 
         <!-- Email Address -->
@@ -12,17 +38,7 @@
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
 
-        <!-- Role -->
-        <div>
-            <x-input-label for="role" :value="__('Role')" />
-                <select id="role" name="role" class="block mt-1 w-full">
-                    <option value="administrador">Administrador</option>
-                    <option value="usuario">Usuario</option>
-                </select>
-               
-            
-            <x-input-error :messages="$errors->get('role')" class="mt-2" />
-        </div>
+       
 
         <!-- Password -->
         <div class="mt-4">
@@ -55,5 +71,6 @@
                 {{ __('Log in') }}
             </x-primary-button>
         </div>
+        
     </form>
 </x-guest-layout>

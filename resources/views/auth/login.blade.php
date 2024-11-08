@@ -13,16 +13,7 @@
         </div>
 
         <!-- Role -->
-        <div>
-            <x-input-label for="role" :value="__('Role')" />
-                <select id="role" name="role" class="block mt-1 w-full">
-                    <option value="administrador">Administrador</option>
-                    <option value="usuario">Usuario</option>
-                </select>
-               
-            
-            <x-input-error :messages="$errors->get('role')" class="mt-2" />
-        </div>
+        
 
         <!-- Password -->
         <div class="mt-4">

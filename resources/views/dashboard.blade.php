@@ -132,7 +132,7 @@
                     Además, contamos con una amplia gama de productos, desde alimentos de alta calidad, medicamentos
                     especializados, hasta divertidos juguetes y accesorios.</p>
                 <br>
-                <button class="btn btn-outline-warning" onclick="showModal('Nosotros')">Conoce más de nosotros</button>
+                <a href="{{route('quienes.index')}}"><button class="btn btn-outline-warning" >Conoce más de nosotros</button></a>
             </div>
         </div>
     </div>

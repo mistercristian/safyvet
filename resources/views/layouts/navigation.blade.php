@@ -34,13 +34,14 @@
 
         <x-slot name="content">
             <!-- Submenú de productos -->
-            <x-dropdown-link href="{{ route('productos.alimento.index')}}">
+            <x-dropdown-link href="{{ route('productos.index', ['categoria_id' => 2])}}">
                 {{ __('Alimentos') }}
             </x-dropdown-link>
-            <x-dropdown-link href="{{ route('productos.medicamento.index')}}">
+            <x-dropdown-link href="{{ route('productos.index', ['categoria_id' => 3])}}">
                 {{ __('Medicamentos') }}
             </x-dropdown-link>
-            <x-dropdown-link href="{{ route('productos.accesorio.index')}}">
+            <x-dropdown-link href="{{ route('productos.index', ['categoria_id' => 1])}}">
+                
                 {{ __('Accesorios') }}
             </x-dropdown-link>
         </x-slot>

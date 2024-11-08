@@ -44,14 +44,21 @@ Route::middleware('auth')->group(function () {
     //------------ // SERVICIO PASEO // ---------->
     Route::get('servicios/paseo', [ServicioController::class, 'indexPaseo'])->name('servicios.paseo.index');
 
-    //------------ // PRODUCTO ALIMENTOS // ---------->
-    Route::get('productos/alimento', [ProductoController::class, 'indexAlimento'])->name('productos.alimento.index');
+    
 
-    //------------ // PRODUCTO ACCESORIOS // ---------->
-    Route::get('productos/accesorio', [ProductoController::class, 'indexAccesorio'])->name('productos.accesorio.index');
+    //------------ // PRODUCTOS // ---------->
 
-    //------------ // PRODUCTO MEDICAMENTOS // ---------->
-    Route::get('productos/medicamento', [ProductoController::class, 'indexMedicamento'])->name('productos.medicamento.index');
+    Route::get('/productos/create', [ProductoController::class, 'create'])->name('productos.create');
+    Route::get('productos/{categoria_id}', [ProductoController::class, 'index'])->name('productos.index');
+    Route::put('/productos/{id}/', [ProductoController::class, 'update'])->name('productos.update');
+    Route::delete('/productos/{producto}', [ProductoController::class, 'destroy'])->name('productos.destroy');
+    Route::get('productos/{id}/edit', [ProductoController::class, 'edit'])->name('productos.edit');
+    Route::post('/productos',[ProductoController::class, 'store'])->name('productos.store');
+    
+
+
+
+   
 
 
 

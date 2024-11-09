@@ -16,7 +16,7 @@
                     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
                     <br>
                    <div class="container d-flex justify-content-center">
-                     <img src="{{ asset('img/safivet2.png') }}" alt="safy" height="250" width="250">
+                     <img src="{{ asset('img/safivet.png') }}" alt="safy" height="250" width="250">
                  </div>
                  <br>
                  <p class="text-center">Cambiar de opinión está bien. Gracias a nuestra Satisfacción garantizada, puedes devolver un producto hasta 30 días calendario después de la fecha en que lo recibes, según su categoría. Ten en cuenta que hay algunas excepciones</p>

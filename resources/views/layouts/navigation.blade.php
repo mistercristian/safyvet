@@ -6,34 +6,23 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <img src="{{ asset('img/safivet2.png') }}" alt="Logo" class="block h-9 w-auto" />
+                        <img src="{{ asset('img/safivet.png') }}" alt="Logo" class="block h-9 w-auto" />
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                        {{ __('Inicio') }}
                     </x-nav-link>
                 </div>
 
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('politicas.index')" :active="request()->routeIs('politicas.index')">
-                        {{ __('Politicas') }}
-                    </x-nav-link>
-                </div>
-
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('terminos.index')" :active="request()->routeIs('terminos.index')">
-                        {{ __('Terminos') }}
-                    </x-nav-link>
-                </div>
 
                 <!-- PRODUCTOS -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-9 sm:flex  items-center">
         <x-dropdown align="right" width="48">
         <x-slot name="trigger">
-            <button class="inline-flex  px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
+            <button class="inline-flex  px-3 py-2 text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
                 <div>{{ __('Productos') }}</div>
                 <div class="ms-1">
                     <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -45,13 +34,14 @@
 
         <x-slot name="content">
             <!-- Submenú de productos -->
-            <x-dropdown-link href="#">
+            <x-dropdown-link href="{{ route('productos.index', ['categoria_id' => 2])}}">
                 {{ __('Alimentos') }}
             </x-dropdown-link>
-            <x-dropdown-link href="#">
+            <x-dropdown-link href="{{ route('productos.index', ['categoria_id' => 3])}}">
                 {{ __('Medicamentos') }}
             </x-dropdown-link>
-            <x-dropdown-link href="#">
+            <x-dropdown-link href="{{ route('productos.index', ['categoria_id' => 1])}}">
+                
                 {{ __('Accesorios') }}
             </x-dropdown-link>
         </x-slot>
@@ -63,7 +53,7 @@
 <div class="hidden space-x-8 sm:-my-px sm:ms-9 sm:flex  items-center">
     <x-dropdown align="right" width="48">
     <x-slot name="trigger">
-        <button class="inline-flex  px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
+        <button class="inline-flex  px-3 py-2 text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
             <div>{{ __('Servicios') }}</div>
             <div class="ms-1">
                 <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -88,7 +78,7 @@
 </x-dropdown>
 </div>
 <!--------- QUIENES SOMOS---------->
-<div class="hidden space-x-8 sm:-my-px sm:ms-8 sm:flex">
+<div class="hidden space-x-8 sm:-my-px sm:ms-9 sm:flex  items-center">
     <x-nav-link :href="route('quienes.index')" :active="request()->routeIs('quienes.index')">
         {{ __('Quienes Somos') }}
     </x-nav-link>
@@ -108,17 +98,31 @@
     </x-nav-link>
 </div>
 
-<!--------- AYUDA---------->
-<div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-    <x-nav-link :href="route('ayudas.index')" :active="request()->routeIs('ayudas.index')">
-        {{ __('Ayuda') }}
-    </x-nav-link>
-</div>
+
 
 <!--------- DEVOLUCIONES---------->
 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
     <x-nav-link :href="route('devoluciones.index')" :active="request()->routeIs('devoluciones.index')">
         {{ __('Devoluciones') }}
+    </x-nav-link>
+</div>
+
+<div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+    <x-nav-link :href="route('politicas.index')" :active="request()->routeIs('politicas.index')">
+        {{ __('Politicas') }}
+    </x-nav-link>
+</div>
+
+<div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+    <x-nav-link :href="route('terminos.index')" :active="request()->routeIs('terminos.index')">
+        {{ __('Terminos') }}
+    </x-nav-link>
+</div>
+
+<!--------- AYUDA---------->
+<div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+    <x-nav-link :href="route('ayudas.index')" :active="request()->routeIs('ayudas.index')">
+        {{ __('Ayuda') }}
     </x-nav-link>
 </div>
 

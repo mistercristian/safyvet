@@ -6,6 +6,7 @@ use App\Http\Controllers\ContactenosController;
 use App\Http\Controllers\QuienesController;
 use App\Http\Controllers\AyudaController;
 use App\Http\Controllers\ServicioController;
+use App\Http\Controllers\ProductoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PoliticaControlador;
 use App\Http\Controllers\TerminoControlador;
@@ -42,6 +43,24 @@ Route::middleware('auth')->group(function () {
 
     //------------ // SERVICIO PASEO // ---------->
     Route::get('servicios/paseo', [ServicioController::class, 'indexPaseo'])->name('servicios.paseo.index');
+
+    
+
+    //------------ // PRODUCTOS // ---------->
+
+    Route::get('/productos/create', [ProductoController::class, 'create'])->name('productos.create');
+    Route::get('productos/{categoria_id}', [ProductoController::class, 'index'])->name('productos.index');
+    Route::put('/productos/{id}/', [ProductoController::class, 'update'])->name('productos.update');
+    Route::delete('/productos/{producto}', [ProductoController::class, 'destroy'])->name('productos.destroy');
+    Route::get('productos/{id}/edit', [ProductoController::class, 'edit'])->name('productos.edit');
+    Route::post('/productos',[ProductoController::class, 'store'])->name('productos.store');
+    
+
+
+
+   
+
+
 
     Route::get('/contactos',[ContactenosController::class, 'index'])->name('contactenos.index');
     Route::post('/contactos',[ContactenosController::class, 'store'])->name('contactenos.store');

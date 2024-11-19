@@ -4,8 +4,8 @@
 
 <x-app-layout>
     <x-slot name="header">
-        <h1 class="font-semibold text-xl text-gray-800 leading-tight d-flex justify-content-center">
-            {{ __('Servicios de Jardín') }}
+        <h1 class="font-semibold text-xl text-gray-800 leading-tight d-flex ">
+            {{  $categoria_nombre }}
         </h1>
     </x-slot>
 
@@ -22,70 +22,56 @@
     </style>
 
     <div class="container mt-5">
-        <h1 class="text-center mb-4 custom-tittle">Nuestros Jardines</h1>
+        <h1 class="text-center mb-4 custom-tittle">Nuestros {{  $categoria_nombre }}</h1>
+        @if(Auth::user()->role === 'administrador')
+    <div class="col-md-1">
+        <a href="{{ route('servicios.create') }}" class="btn btn-success">Add</a>
+        </div>
+        @endif
         <div class="row">
+
+            @foreach ($servicios as $servicio)
 
             <div class="col-md-4">
                 <div class="card" style="width: 100%;">
-                    <img src="{{ asset('img/servicios/jardin_divertido.jpg') }}" class="card-img-top"
+                    <img src="{{ asset('img/servicios/'.$servicio->foto) }}" class="card-img-top"
                         alt="Jardín Divertido" style="height: 200px; object-fit: cover;">
                     <div class="card-body">
                         <div class="d-flex justify-content-center">
-                            <h5 class="card-title">Jardín Divertido</h5>
+                            <h5 class="card-title">{{$servicio->nombre}}</h5>
                         </div>
                         <div class="d-flex justify-content-center">
-                            <p class="card-text">Un espacio de diversión total, ideal para mascotas que disfrutan
-                                jugando y explorando al aire libre.</p>
+                            <p class="card-text">{{$servicio->descripcion}}</p>
                         </div>
                         <br>
                         <div class="d-flex justify-content-center">
-                            <a href="#jardin-divertido" class="btn btn-info">Ver Más</a>
+                            <a href="#{{$servicio->nombre}}" class="btn btn-info">Ver Más</a>
+                            @if(Auth::user()->role === 'administrador')
+
+                        
+                            <button onclick="window.location.href='{{ route('servicios.edit', ['id' => $servicio->id]) }}'" class="btn btn-warning" >
+                                Editar
+                            </button>
+
+                           
+
+                            <form action="{{route('servicios.destroy', ['servicio'=>$servicio->id])}}" method="POST" >
+                                @method('delete')
+                                @csrf
+                                <button type="submit" class="btn btn-danger" >Eliminar</button>
+                                </form>
+                                
+                                @endif
                         </div>
                     </div>
                 </div>
             </div>
 
-
-            <div class="col-md-4">
-                <div class="card" style="width: 100%;">
-                    <img src="{{ asset('img/servicios/jardin_aventura.jpg') }}" class="card-img-top"
-                        alt="Jardín Aventurero" style="height: 200px; object-fit: cover;">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-center">
-                            <h5 class="card-title">Jardín Aventurero</h5>
-                        </div>
-                        <div class="d-flex justify-content-center">
-                            <p class="card-text">Para los exploradores de corazón, este jardín ofrece un entorno lleno
-                                de aventuras y retos.</p>
-                        </div>
-                        <br>
-                        <div class="d-flex justify-content-center">
-                            <a href="#jardin-aventurero" class="btn btn-info">Ver Más</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
 
 
-            <div class="col-md-4">
-                <div class="card" style="width: 100%;">
-                    <img src="{{ asset('img/servicios/jardin_relajante.jpg') }}" class="card-img-top"
-                        alt="Jardín Relajante" style="height: 200px; object-fit: cover;">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-center">
-                            <h5 class="card-title">Jardín Relajante</h5>
-                        </div>
-                        <div class="d-flex justify-content-center">
-                            <p class="card-text">Un espacio tranquilo donde tu mascota puede relajarse y disfrutar de la
-                                naturaleza.</p>
-                        </div>
-                        <br>
-                        <div class="d-flex justify-content-center">
-                            <a href="#jardin-relajante" class="btn btn-info">Ver Más</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
+            
         </div>
     </div>
 
@@ -94,55 +80,32 @@
     <hr class="my-5" style="border-top: 7px solid #e0a119;">
 
     <div class="container mt-5">
-        <h1 class="text-center mb-4 custom-tittle">Descripción de Servicios</h1>
+        <h1 class="text-center mb-4 custom-tittle">Descripción de {{  $categoria_nombre }}</h1>
 
-        <div id="jardin-divertido" class="row align-items-center mb-5">
+        @foreach ($servicios as $servicio)
+
+        <div id="{{$servicio->nombre}}" class="row align-items-center mb-5">
             <div class="col-md-4">
-                <img src="{{ asset('img/servicios/jardin_divertido.jpg') }}" alt="Jardín Divertido"
+                <img src="{{ asset('img/servicios/'.$servicio->foto) }}" alt="{{$servicio->nombre}}"
                     class="img-fluid rounded">
             </div>
             <div class="col-md-8">
-                <h2>Jardín Divertido</h2>
-                <p>El Jardín Divertido es perfecto para mascotas activas que disfrutan de juegos y actividad constante
-                    en un ambiente seguro y al aire libre.</p>
-                <p><strong>Incluye:</strong> Juegos interactivos, actividades recreativas.</p>
-                <p><strong>Precio:</strong> $60.000</p>
+                <h2>{{$servicio->nombre}}</h2>
+                <p>{{$servicio->descripcion2}}</p>
+                <p><strong>Incluye:</strong> {{$servicio->incluye}}</p>
+                <p><strong>Precio:</strong> ${{$servicio->price}}</p>
                 <br>
-                <button onclick="showGardenModal('Jardín Divertido')" class="btn btn-warning">Obtener</button>
+                <button onclick="showGardenModal('{{$servicio->nombre}}')" class="btn btn-warning">Obtener</button>
+
+                
+
+
+
             </div>
         </div>
 
-        <div id="jardin-aventurero" class="row align-items-center mb-5">
-            <div class="col-md-4">
-                <img src="{{ asset('img/servicios/jardin_aventura2.jpg') }}" alt="Jardín Aventurero"
-                    class="img-fluid rounded">
-            </div>
-            <div class="col-md-8">
-                <h2>Jardín Aventurero</h2>
-                <p>El Jardín Aventurero está diseñado para mascotas curiosas que disfrutan explorando y enfrentando
-                    nuevos desafíos en un entorno controlado.</p>
-                <p><strong>Incluye:</strong> Senderos de exploración, actividades de aventura.</p>
-                <p><strong>Precio:</strong> $75.000</p>
-                <br>
-                <button class="btn btn-warning" onclick="showGardenModal('Jardín Aventurero')">Obtener</button>
-            </div>
-        </div>
-
-        <div id="jardin-relajante" class="row align-items-center mb-5">
-            <div class="col-md-4">
-                <img src="{{ asset('img/servicios/jardin_relajante.jpg') }}" alt="Jardín Relajante"
-                    class="img-fluid rounded">
-            </div>
-            <div class="col-md-8">
-                <h2>Jardín Relajante</h2>
-                <p>El Jardín Relajante es ideal para mascotas que buscan paz y tranquilidad, con un entorno de
-                    naturaleza para relajarse y descansar.</p>
-                <p><strong>Incluye:</strong> Zonas tranquilas, tiempo de calidad en un entorno verde.</p>
-                <p><strong>Precio:</strong> $55.000</p>
-                <br>
-                <button class="btn btn-warning" onclick="showGardenModal('Jardín Relajante')">Obtener</button>
-            </div>
-        </div>
+        @endforeach
+        
     </div>
 
 

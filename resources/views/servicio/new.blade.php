@@ -5,7 +5,7 @@
     <x-slot name="header">
         <h1 class="font-semibold text-xl text-gray-800 leading-tight d-flex ">
             <h1 class="font-semibold text-xl text-gray-800 leading-tight d-flex">
-            {{$producto->nombre}}
+                Creacion de Servicio
             </h1>
         </h1>
     </x-slot>
@@ -18,40 +18,45 @@
     </style>
 
 <div class="container mt-5">
-    <h1 class="text-center mb-4 custom-tittle">Edit {{$producto->nombre}}</h1>
+    <h1 class="text-center mb-4 custom-tittle">Agregar Servicio </h1>
     
     <div class="row">
 
-    <form method="POST" action="{{route('productos.update',['id'=>$producto->id])}}" enctype="multipart/form-data">
-        @method('put')
+    <form method="POST" action="{{route('servicios.store')}}" enctype="multipart/form-data">
+        
         @csrf
         <div class="mb-3">
-          <label for="codigo" class="form-label">Codigo</label>
-          <input type="text" class="form-control" id="id" aria-describedby="codigoHelp" name="id" disabled="disable" value="{{$producto->id}}">
-          <div id="idHelp" class="form-text">Codigo Servicio</div>
+          
+          <input type="hidden" class="form-control" id="id" aria-describedby="codigoHelp" name="id" disabled="disable" value="">
+         
         </div>
         <div class="mb-3">
             <label for="name" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="name" aria-describedby="nameHelp" name="name" placeholder="Nombre Comuna" value="{{$producto->nombre}}">
+            <input type="text" class="form-control" id="name" aria-describedby="nameHelp" name="name" placeholder="Nombre Servicio" value="">
             
           </div>
 
-        <label for="municipio" class="form-label">Categoria:</label>
+          <div class="mb-3">
+
+        <label for="categoria" class="form-label">Categorias:</label>
         <select class="form-select" id="categoria" name="categoria" required>
             <option selected disabled value="">Seleccionar Uno...</option>
             @foreach ($categorias as $categoria )
-            @if ($categoria->id ==$producto->categoria_id)
-            <option selected value="{{$categoria->id}}">{{$categoria->nombre}}</option>
-            @else
-            <option value="{{$categoria->id}}">{{$categoria->nombre}}</option>   
-            
-            @endif   
+            <option value="{{$categoria->id}}">{{$categoria->nombre}}</option>
+                
             @endforeach
         </select>
+    </div>
 
         <div class="mb-3">
-            <label for="name" class="form-label">Descripcion</label>
-            <textarea class="form-control" id="descri"  name="descri" narows="3" value="">{{$producto->descripcion}}</textarea>
+            <label for="name" class="form-label">Descripcion Corta</label>
+            <textarea class="form-control" id="descri"  name="descri" narows="3" value=""></textarea>
+            
+          </div>
+
+          <div class="mb-3">
+            <label for="name" class="form-label">Descripcion Larga</label>
+            <textarea class="form-control" id="descri2"  name="descri2" narows="3" value=""></textarea>
             
           </div>
 
@@ -62,18 +67,18 @@
 
           <div class="mb-3">
             <label for="price" class="form-label">Precio</label>
-            <input type="text" class="form-control" id="price" aria-describedby="nameHelp" name="price"  value="{{$producto->price}}">
+            <input type="text" class="form-control" id="price" aria-describedby="nameHelp" name="price"  value="">
             
           </div>
           <div class="mb-3">
-            <label for="stock" class="form-label">Stock</label>
-            <input type="text" class="form-control" id="stock" aria-describedby="nameHelp" name="stock"  value="{{$producto->stock}}">
+            <label for="stock" class="form-label">Incluye</label>
+            <input type="text" class="form-control" id="incluye" aria-describedby="nameHelp" name="incluye"  value="">
             
           </div>
 
         <div class="mt-3">
             <button type="submit" class="btn btn-primary">Guardar</button>
-            <a href="{{ route('productos.index', ['categoria_id' => $producto->categoria_id]) }}" class="btn btn-warning">Cancelar</a>
+            <a  href="{{ route('dashboard') }}"  class="btn btn-warning">Cancelar</a>
 
             
             

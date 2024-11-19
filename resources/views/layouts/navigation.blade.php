@@ -65,13 +65,13 @@
     <x-slot name="content">
 
         <!-- Submenú de servicios -->
-        <x-dropdown-link href="{{ route('servicios.jardin.index')}}">
+        <x-dropdown-link href="{{ route('servicios.index', ['categoria_id' => 4])}}">
             {{ __('Jardin') }}
         </x-dropdown-link>
-        <x-dropdown-link href="{{ route('servicios.spa.index')}}">
+        <x-dropdown-link href="{{ route('servicios.index', ['categoria_id' => 5])}}">
             {{ __('Spa') }}
         </x-dropdown-link>
-        <x-dropdown-link href="{{ route('servicios.paseo.index')}}">
+        <x-dropdown-link href="{{ route('servicios.index', ['categoria_id' => 6])}}">
             {{ __('Paseos') }}
         </x-dropdown-link>
     </x-slot>

@@ -92,21 +92,21 @@
             <div class="row">
 
                 <div class="col-md-4 mb-4">
-                    <a href="{{ route('servicios.jardin.index') }}" class="btn-circle">
+                    <a href="{{ route('servicios.index', ['categoria_id' => 4])}}" class="btn-circle">
                         <img src="{{ asset('img/dashboard/jardin.jpg') }}" alt="Jardín" class="img-circle">
                     </a>
                     <p class="mt-2">Jardín</p>
                 </div>
 
                 <div class="col-md-4 mb-4">
-                    <a href="{{ route('servicios.paseo.index') }}" class="btn-circle">
+                    <a href="{{ route('servicios.index', ['categoria_id' => 6])}}" class="btn-circle">
                         <img src="{{ asset('img/dashboard/paseo.jpg') }}" alt="Paseos" class="img-circle">
                     </a>
                     <p class="mt-2">Paseos</p>
                 </div>
 
                 <div class="col-md-4 mb-4">
-                    <a href="{{ route('servicios.spa.index') }}" class="btn-circle">
+                    <a href="{{ route('servicios.index', ['categoria_id' => 5])}}" class="btn-circle">
                         <img src="{{ asset('img/dashboard/spa.jpg') }}" alt="Spa" class="img-circle">
                     </a>
                     <p class="mt-2">Spa</p>

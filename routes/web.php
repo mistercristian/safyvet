@@ -36,13 +36,13 @@ Route::middleware('auth')->group(function () {
     
     //------------ // POLITICAS // ---------->
     //------------ // SERVICIO JARDIN // ---------->
-    Route::get('servicios/jardin', [ServicioController::class, 'indexJardin'])->name('servicios.jardin.index');
+    //Route::get('servicios/jardin', [ServicioController::class, 'indexJardin'])->name('servicios.jardin.index');
 
     //------------ // SERVICIO SPA // ---------->
-    Route::get('servicios/spa', [ServicioController::class, 'indexSpa'])->name('servicios.spa.index');
+    //Route::get('servicios/spa', [ServicioController::class, 'indexSpa'])->name('servicios.spa.index');
 
     //------------ // SERVICIO PASEO // ---------->
-    Route::get('servicios/paseo', [ServicioController::class, 'indexPaseo'])->name('servicios.paseo.index');
+    //Route::get('servicios/paseo', [ServicioController::class, 'indexPaseo'])->name('servicios.paseo.index');
 
     
 
@@ -54,12 +54,16 @@ Route::middleware('auth')->group(function () {
     Route::delete('/productos/{producto}', [ProductoController::class, 'destroy'])->name('productos.destroy');
     Route::get('productos/{id}/edit', [ProductoController::class, 'edit'])->name('productos.edit');
     Route::post('/productos',[ProductoController::class, 'store'])->name('productos.store');
+
+    //------------ // SERVICIOS // ---------->
+
+    Route::get('/servicios/create', [ServicioController::class, 'create'])->name('servicios.create');
+    Route::get('servicios/{categoria_id}', [ServicioController::class, 'index'])->name('servicios.index');
+    Route::put('/servicios/{id}/', [ServicioController::class, 'update'])->name('servicios.update');
+    Route::delete('/servicios/{servicio}', [ServicioController::class, 'destroy'])->name('servicios.destroy');
+    Route::get('servicios/{id}/edit', [ServicioController::class, 'edit'])->name('servicios.edit');
+    Route::post('/servicios',[ServicioController::class, 'store'])->name('servicios.store');
     
-
-
-
-   
-
 
 
     Route::get('/contactos',[ContactenosController::class, 'index'])->name('contactenos.index');

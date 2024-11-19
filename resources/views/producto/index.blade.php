@@ -15,6 +15,10 @@
             font-size: 2rem; 
             font-weight: bold; 
         }
+        .btn-custom {
+    height: ;: 53.6px; /* Ajusta el tamaño del botón */
+
+}
     </style>
 
 <div class="container mt-5">
@@ -42,22 +46,22 @@
                         <p class="card-text">{{$producto->descripcion}} </p>
                     </div>
                     <br>
-                    <div class="d-flex justify-content-center">
-                        <button onclick="showGardenModal('{{$producto->nombre}}')" class="btn btn-warning">Comprar</a>
+                     <div class="d-flex justify-content-center">
+                         <button onclick="showGardenModal('{{$producto->nombre}}')" class="btn btn-warning">Comprar</button>
                     
                             @if(Auth::user()->role === 'administrador')
 
                         
-                            <button onclick="window.location.href='{{ route('productos.edit', ['id' => $producto->id]) }}'" class="btn btn-info">
+                            <button onclick="window.location.href='{{ route('productos.edit', ['id' => $producto->id]) }}'" class="btn btn-info" >
                                 Editar
                             </button>
 
-                          
+                           
 
-                            <form action="{{route('productos.destroy', ['producto'=>$producto->id])}}" method="POST" style="display: inline-block">
+                            <form action="{{route('productos.destroy', ['producto'=>$producto->id])}}" method="POST" >
                                 @method('delete')
                                 @csrf
-                                <input class="btn btn-danger" type="submit" value="Delete">
+                                <button type="submit" class="btn btn-danger" >Eliminar</button>
                                 </form>
                                 
                                 @endif

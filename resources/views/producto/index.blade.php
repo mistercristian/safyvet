@@ -45,9 +45,22 @@
                     <div class="d-flex justify-content-center">
                         <p class="card-text">{{$producto->descripcion}} </p>
                     </div>
+
+                    <div class="d-flex justify-content-center">
+                         <p class="card-text">Stock: {{ round($producto->stock) }} </p>
+                    </div>
+
+                    <div class="d-flex justify-content-center">
+                    <strong><p class="card-text">Valor: {{ round($producto->price) }} </p></strong>
+                    </div>
+
+
+
                     <br>
                      <div class="d-flex justify-content-center">
-                         <button onclick="showGardenModal('{{$producto->nombre}}')" class="btn btn-warning">Comprar</button>
+                        <button onclick="window.location.href='{{ route('factura.create', ['id' => $producto->id]) }}'" class="btn btn-warning">
+                            Comprar
+                        </button>
                     
                             @if(Auth::user()->role === 'administrador')
 

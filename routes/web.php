@@ -12,6 +12,7 @@ use App\Http\Controllers\PoliticaControlador;
 use App\Http\Controllers\TerminoControlador;
 use App\Http\Controllers\DevolucionControlador;
 use App\Http\Controllers\PeticionControlador;
+use App\Http\Controllers\FacturaController;
 
 
 Route::get('/', function () {
@@ -63,6 +64,17 @@ Route::middleware('auth')->group(function () {
     Route::delete('/servicios/{servicio}', [ServicioController::class, 'destroy'])->name('servicios.destroy');
     Route::get('servicios/{id}/edit', [ServicioController::class, 'edit'])->name('servicios.edit');
     Route::post('/servicios',[ServicioController::class, 'store'])->name('servicios.store');
+
+
+
+    //-----------------FACTURACION------------>
+
+        // Ruta para mostrar el formulario de facturación
+    Route::get('/facturas',[FacturaController::class, 'index'])->name('facturas.index');
+    Route::get('/factura/create/{id}', [FacturaController::class, 'create'])->name('factura.create');
+        // Ruta para guardar la factura
+    Route::post('/factura/store', [FacturaController::class, 'store'])->name('factura.store');
+
     
 
 
@@ -84,6 +96,8 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/devoluciones',[DevolucionControlador::class, 'index'])->name('devoluciones.index');
     Route::post('/devoluciones',[DevolucionControlador::class, 'store'])->name('devoluciones.store');
+
+    
 });
 
 require __DIR__.'/auth.php';
